@@ -434,9 +434,8 @@ body {
   }
 
   .nav-container {
-    padding: 20px 0px;
-    justify-content: center;
-    gap: 20px;
+    padding: 10px 0px;
+    justify-content: space-around;
     flex-wrap: wrap;
   }
 
