@@ -46,7 +46,7 @@
         </div>
       </div>
       <div class="btn-container">
-        <button class="btn">Download CV</button>
+        <button class="btn" id="download-cv-btn">Download CV</button>
       </div>
     </header>
 
@@ -283,11 +283,11 @@
           </div>
 
           <div class="footer-right">
-            <form class="contact-form">
-              <input type="text" placeholder="Your Name" required />
-              <input type="email" placeholder="Your Email" required />
-              <textarea placeholder="Your Message"></textarea>
-              <button type="submit">Send Message</button>
+            <form class="contact-form" id="contact-form">
+              <input type="text" id="name-input" placeholder="Your Name" required />
+              <input type="email" id="email-input" placeholder="Your Email" required />
+              <textarea id="message-input" placeholder="Your Message" required></textarea>
+              <button type="submit" id="submit-btn">Send Message</button>
             </form>
 
             <div class="social-icons">
@@ -312,5 +312,7 @@
         </p>
       </div>
     </footer>
+
+    <script src="./script.js"></script>
   </body>
 </html>
