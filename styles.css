@@ -283,7 +283,6 @@ body {
   font-weight: 600;
 }
 
-/* Institution link styling */
 .edu-details a {
   text-decoration: none;
   display: inline-block;
@@ -338,38 +337,92 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 24px;
+  margin-bottom: 20px;
 }
 
 .skill-card {
   background-color: rgba(16, 38, 63, 0.05);
-  padding: 20px;
+  padding: 25px 20px;
   border-radius: 8px;
-  transition:
-    transform 0.2s ease,
-    background-color 0.2s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid transparent;
 }
 
 .skill-card:hover {
-  transform: translateY(-4px);
-  background-color: rgba(0, 72, 255, 0.1);
+  transform: translateY(-5px);
+  background-color: rgba(253, 110, 10, 0.05);
+  border-color: rgba(253, 110, 10, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.skill-icon {
+  font-size: 42px;
+  color: #fd6e0a;
+  margin-bottom: 15px;
+  display: inline-block;
 }
 
 .skill-card h3 {
-  margin-top: 12px;
-  margin-bottom: 8px;
+  margin-top: 0;
+  margin-bottom: 10px;
   font-size: 20px;
   color: #10263f;
+  font-weight: 600;
 }
 
 .skill-card p {
   font-size: 14px;
   color: #555555;
-  line-height: 1.5;
+  line-height: 1.6;
+  margin-bottom: 0;
 }
 
-.skill-icon {
-  font-size: 36px;
+/* Soft Skills List */
+.soft-skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.soft-skill-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 18px 20px;
+  background-color: rgba(16, 38, 63, 0.03);
+  border-radius: 8px;
+  border-left: 4px solid #fd6e0a;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.soft-skill-item:hover {
+  transform: translateX(8px);
+  background-color: rgba(253, 110, 10, 0.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.soft-skill-icon {
+  font-size: 26px;
   color: #fd6e0a;
+  min-width: 45px;
+  text-align: center;
+  padding-top: 3px;
+}
+
+.soft-skill-item h3 {
+  font-size: 18px;
+  margin: 0 0 6px 0;
+  color: #10263f;
+  font-weight: 600;
+}
+
+.soft-skill-item p {
+  font-size: 14px;
+  color: #555555;
+  margin: 0;
+  line-height: 1.6;
 }
 
 /* Projects section */
@@ -633,5 +686,71 @@ body {
 
   .edu-details .institution {
     display: inline-block;
+  }
+   .skills-section {
+    padding: 0 15px;
+  }
+  
+  .skills-container h1 {
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  .skills-container p {
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+  }
+  
+  .skill-card {
+    padding: 20px 15px;
+    text-align: center;
+  }
+  
+  .skill-card:hover {
+    transform: translateY(-3px);
+  }
+  
+  .skill-icon {
+    font-size: 36px;
+  }
+  
+  .skill-card h3 {
+    font-size: 18px;
+  }
+  
+  .skill-card p {
+    font-size: 13px;
+  }
+  
+  .soft-skill-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 15px;
+    border-left: none;
+    border-top: 4px solid #fd6e0a;
+  }
+  
+  .soft-skill-item:hover {
+    transform: translateY(-3px);
+  }
+  
+  .soft-skill-icon {
+    margin-bottom: 10px;
+    font-size: 30px;
+  }
+  
+  .soft-skill-item h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  
+  .soft-skill-item p {
+    font-size: 13px;
   }
 }

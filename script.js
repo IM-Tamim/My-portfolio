@@ -1,40 +1,28 @@
-document.getElementById('download-cv-btn').addEventListener('click', function() {
+document.getElementById('download-cv-btn').addEventListener('click', ()=>{
     showMessage("Tamim Doesn't have CV at this moment");
 });
 
-document.getElementById('contact-form').addEventListener('submit', function(e) {
+document.getElementById('contact-form').addEventListener('submit', (e)=>{
     e.preventDefault();
-    showMessage('Thank you for your message! I will get back to you soon.');
-    this.reset();
+    const email = document.getElementById('email-input').value.trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) 
+        return showMessage('Valid email required','error');
+    showMessage('Thank you for your message!','success');
+    e.target.reset();
 });
 
-function showMessage(text) {
-    const existingMsg = document.querySelector('.notification-message');
-    if (existingMsg) existingMsg.remove();
-
-    const msg = document.createElement('div');
-    msg.className = 'notification-message';
+function showMessage(text, type='info'){
+    let old = document.querySelector('.msg');
+    if(old) old.remove();
+    let msg = document.createElement('div');
+    msg.className = 'msg';
     msg.textContent = text;
-    msg.style.position = 'fixed';
-    msg.style.top = '20px';
-    msg.style.right = '20px';
-    msg.style.padding = '15px 25px';
-    msg.style.background = '#fd6e0a';
-    msg.style.color = 'white';
-    msg.style.borderRadius = '5px';
-    msg.style.zIndex = '9999';
-    msg.style.transition = 'all 0.5s ease';
-    msg.style.opacity = '0';
-    msg.style.transform = 'translateX(50px)';
-    
+    msg.style.cssText = `position:fixed;top:20px;right:20px;padding:15px 25px;
+        background:${type=='error'?'#f44336':type=='success'?'#4CAF50':'#fd6e0a'};
+        color:white;border-radius:5px;z-index:9999;transition:0.5s;
+        opacity:0;transform:translateX(50px)`;
     document.body.appendChild(msg);
-    setTimeout(() => {
-        msg.style.opacity = '1';
-        msg.style.transform = 'translateX(0)';
-    }, 10);
-    setTimeout(() => {
-        msg.style.opacity = '0';
-        msg.style.transform = 'translateX(50px)';
-        setTimeout(() => msg.remove(), 500);
-    }, 3000);
+    setTimeout(()=>{msg.style.opacity='1';msg.style.transform='translateX(0)'},10);
+    setTimeout(()=>{msg.style.opacity='0';msg.style.transform='translateX(50px)';
+        setTimeout(()=>msg.remove(),500)},3000);
 }
